@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banking Patterns Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Banking Patterns</h1>
+      <p class="description">Observer (notifications) • Strategy (interest) • Command (transactions + undo)</p>
+    </div>
+    <div class="badge">Single-file demo</div>
+  </header>
+
+  <main class="container">
+    <!-- Left column: customers & accounts -->
+    <section class="customer-section">
+      <h3>Customers</h3>
+      <label>Customer name
+        <input id="custName" placeholder="e.g. Karthi" />
+      </label>
+      <div class="button-group">
+        <button id="addCustBtn">Add Customer</button>
+        <button id="seedBtn" class="btn-success">See Demo</button>
+      </div>
+      <div id="customersList" class="list-container"></div>
+
+      <hr />
+
+      <h3>Create Account</h3>
+      <label>Account type
+        <select id="acctType">
+          <option value="savings">Savings</option>
+          <option value="current">Current</option>
+          <option value="fixed">Fixed Deposit</option>
+        </select>
+      </label>
+      <label>Owner
+        <select id="ownerSelect"></select>
+      </label>
+      <label>Initial balance
+        <input id="initBalance" type="number" value="1000" />
+      </label>
+      <button id="createAcctBtn">Create Account</button>
+
+      <div id="accountsList" class="list-container"></div>
+    </section>
+
+    <!-- Right column: transactions, strategies, notifications -->
+    <section class="transaction-section">
+      <h3>Transactions & Interest</h3>
+
+      <div class="row">
+        <label>Select account
+          <select id="selectAccount"></select>
+        </label>
+        <label>Amount
+          <input id="amount" type="number" value="100" />
+        </label>
+      </div>
+
+      <div class="button-group">
+        <button id="depositBtn">Deposit</button>
+        <button id="withdrawBtn">Withdraw</button>
+        <button id="transferBtn">Transfer</button>
+        <button id="undoBtn" class="btn-danger">Undo</button>
+      </div>
+
+      <label>Transfer target
+        <select id="transferTo"></select>
+      </label>
+
+      <hr />
+
+      <h4>Interest Strategy</h4>
+      <div class="row">
+        <label>Strategy
+          <select id="strategySelect">
+            <option value="savings">SavingsInterest (3%)</option>
+            <option value="fixed">FixedDepositInterest (7%)</option>
+            <option value="current">CurrentInterest (0%)</option>
+          </select>
+        </label>
+        <button id="applyStrategyBtn">Apply</button>
+      </div>
+
+      <div>
+        <strong>Calculated interest:</strong> <span id="interestValue">—</span>
+      </div>
+
+      <hr />
+
+      <h4>Notifications</h4>
+      <div id="notifications" class="notifications"></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="small">
+      Notes: Account is the subject (observer pattern). Interest strategies are swapped at runtime (strategy pattern). Transactions are commands recorded in a history that can be undone (command pattern).
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

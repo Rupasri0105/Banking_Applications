@@ -1,0 +1,177 @@
+:root {
+  --bg: #f4f7fb;
+  --card: #fff;
+  --muted: #6b7280;
+  --primary: #0b5cff;
+  --danger: #ff6b6b;
+  --hover-bg: rgba(11, 92, 255, 0.1);
+}
+
+body {
+  font-family: 'Inter', system-ui, Arial;
+  margin: 20px;
+  background: var(--bg);
+  color: #0f172a;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #111827;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  border: 1px solid #e6e9f2;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 0;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.3s;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #084fca;
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+button.danger:hover {
+  background: #e60000;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.accounts-list {
+  margin-top: 24px;
+}
+
+.account-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fbfdff;
+  margin-bottom: 12px;
+  border: 1px solid #eef2ff;
+  transition: background-color 0.3s ease;
+}
+
+.account-row:hover {
+  background-color: rgba(15, 23, 42, 0.04);
+}
+
+.notifications {
+  height: 220px;
+  overflow: auto;
+  margin-top: 16px;
+  border-radius: 12px;
+  border: 1px dashed #e6e9f0;
+  padding: 12px;
+  background: #fbfdff;
+}
+
+.small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.badge {
+  background: #eff6ff;
+  color: #034ea2;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 880px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
